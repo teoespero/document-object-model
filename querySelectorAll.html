@@ -20,27 +20,36 @@
 			<script type="text/javascript" src="bootstrap.js"></script>
 			<meta charset="utf-8">
 			<meta charset="utf-8">
-			<title>teoespero.com | Javascript Programming - Document Object Model (DOM)</title>
+			<title>teoespero.com | Javascript Programming - querySelectorAll</title>
 			<meta name="description" content="">
   			<meta name="author" content="teoespero">
   
 	</head>
 	<body>
 		<div class="container">
-			<h1>Document Object Model Drills</h1>
+			<h1 id="hello">Hello</h1>
+			<h1 id="goodbye">Goodbye</h1>
 			<ul>
-				<li><a href="change-h1-color.html">Change the header (h1 tag) color</a></li>
-				<li><a href="change-body-bg-color.html">Change the document (body) background color</a></li>
-				<li>DOM Selectors
-					<ul>
-						<li><a href="getElementByID.html">document.getElementById()</a></li>
-						<li><a href="getElementByClassName.html">document.getElementsByClassName()</a></li>
-						<li><a href="getElementsByTagName.html">document.getElementByTagName()</a></li>
-						<li><a href="querySelector.html">document.querySelector()</a></li>
-						<li><a href="querySelectorAll.html">document.querySelectorAll()</a></li>
-					</ul>
-				</li>
+				<li id="highlight">List Item # 1</li>
+				<li class="bolded">List Item # 2</li>
+				<li class="bolded">List Item # 3</li>
 			</ul>
+			<script type="text/javascript">
+				var myClassName = document.querySelectorAll(".bolded"); // based on class name
+				var myTag = document.querySelectorAll("h1") // based on tag
+
+				for (counter = 0; counter < myTag.length; counter++) {
+				    myTag[counter].style.backgroundColor = "red";
+				}
+
+				document.write("You have " + myTag.length + " tags for H1 (red).<br>");
+
+				for (counter = 0; counter < myClassName.length; counter++) {
+				    myClassName[counter].style.backgroundColor = "orange";
+				}
+
+				document.write("You have " + myClassName.length + " tags that has the bolded classname (orange).");
+			</script>
 		</div>
 	</body>
 </html>
