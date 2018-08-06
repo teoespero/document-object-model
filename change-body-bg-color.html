@@ -27,11 +27,21 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>Document Object Model Sample</h1>
-			<ul>
-				<li><a href="change-h1-color.html">Change the header (h1 tag) color</a></li>
-				<li><a href="change-body-bg-color.html">Change the document (body) background color</a></li>
-			</ul>
+			<script type="text/javascript">
+				var body = document.querySelector("body");
+
+				var isBlue = false;
+
+				setInterval(function(){
+					if (isBlue){
+						body.style.background = "#ffffff";
+					}
+					else {
+						body.style.background = "#3498db";	
+					}
+					isBlue = !isBlue;
+				}, 1000);
+			</script>
 		</div>
 	</body>
 </html>
