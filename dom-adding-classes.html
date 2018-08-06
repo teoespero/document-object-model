@@ -1,0 +1,43 @@
+<!-- 	
+	Teo Espero
+	BS Cloud and Systems Administration
+	Western Governors University
+
+	#Web-Dev-Bootcamp-Udemy
+-->
+
+<! DOCTYPE html>
+<html lang="en">
+<html>
+	<head>	
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link href="normalize.css" rel="stylesheet" type="text/css">
+			<meta charset="utf-8">
+			<title>teoespero.com | Javascript Programming - DOM Styles</title>
+			<meta name="description" content="">
+  			<meta name="author" content="teoespero">
+  			<link href="some-class.css" rel="stylesheet" type="text/css">
+  
+	</head>
+	<body>
+		<div class="container">
+			<h1 id="hello">Hello</h1>
+			<h1 id="goodbye">Goodbye</h1>
+			<ul>
+				<li id="highlight">List Item # 1</li>
+				<li class="bolded">List Item # 2</li>
+				<li class="bolded">List Item # 3</li>
+			</ul>
+			<script type="text/javascript">
+				var IdTag01 = document.getElementById("hello"); // getting the element by ID
+				var IdTag02 = document.getElementById("goodbye"); // getting the element by ID
+
+				// manipulating the element's property 
+				// by their element ID
+
+				IdTag01.classList.add("some_class_we_use");
+				IdTag02.classList.add("some_other_class_we_use");
+			</script>
+		</div>
+	</body>
+</html>
