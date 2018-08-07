@@ -27,27 +27,27 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1 id="header">Color Picker</h1>
-			<input type="color" id="myColor"> <button onclick="whatColor()">Apply</button>
+			<h1 class="myLabel">Color Picker</h1>
+			<input type="color" id="myColor"> 
+			<button onclick="whatColor()" class="btn btn-default">Apply</button>
 			<br>
 			<br>
-			<label id="myLabel">Background color&nbsp;</label><label id="colorCode">#000000</label>
+			<label class="myLabel">Background color&nbsp;</label><label id="colorCode" class="myLabel">#000000</label>
 			<br>
-			<label id="myLabel2">Text color</label>&nbsp;<label id="colorCodeText">#000000</label>
-			<p id="myText">
-				Lorem ipsum dolor amet food truck enamel pin whatever williamsburg retro gluten-free. Austin flexitarian waistcoat, lyft wayfarers hammock mlkshk cray next level meggings drinking vinegar vice. Vice squid food truck, poke schlitz pop-up dreamcatcher narwhal marfa quinoa. Distillery celiac kickstarter tofu glossier. Brunch live-edge ethical, humblebrag forage vexillologist semiotics swag fashion axe chartreuse. Mustache keytar listicle YOLO yr.
-			</p>
+			<label class="myLabel">Text color</label>&nbsp;<label id="colorCodeText" class="myLabel">#000000</label>
+			<p id="myText" class="myLabel">
+				Lorem ipsum dolor amet food truck enamel pin whatever williamsburg retro gluten-free. Austin flexitarian waistcoat, lyft wayfarers hammock mlkshk cray next level meggings drinking vinegar vice. Vice squid food truck, poke schlitz pop-up dreamcatcher narwhal marfa quinoa. Distillery celiac kickstarter tofu glossier. Brunch live-edge ethical, humblebrag forage vexillologist semiotics swag fashion axe chartreuse. Mustache keytar listicle YOLO yr. Lorem ipsum dolor amet food truck enamel pin whatever williamsburg retro gluten-free. Austin flexitarian waistcoat, lyft wayfarers hammock mlkshk cray next level meggings drinking vinegar vice. Vice squid food truck, poke schlitz pop-up dreamcatcher narwhal marfa quinoa. Distillery celiac kickstarter tofu glossier. Brunch live-edge ethical, humblebrag forage vexillologist semiotics swag fashion axe chartreuse. Mustache keytar listicle YOLO yr.
+			</p> 
 			<script type="text/javascript">
 				function whatColor(){
 					document.body.style.backgroundColor = myColor.value;	
 					document.getElementById("colorCode").textContent = myColor.value;
 					document.getElementById("colorCodeText").textContent = myColor.value;
-					document.getElementById("colorCodeText").style.color = invertColor(myColor.value);
-					document.getElementById("colorCode").style.color = invertColor(myColor.value);
-					document.getElementById("header").style.color = invertColor(myColor.value);
-					document.getElementById("myLabel").style.color = invertColor(myColor.value);
-					document.getElementById("myLabel2").style.color = invertColor(myColor.value);
-					document.getElementById("myText").style.color = invertColor(myColor.value);
+
+					var elements = document.getElementsByClassName("myLabel");
+					for (var counter = 0; counter < elements.length; counter++) {
+    					elements[counter].style.color = invertColor(myColor.value);
+					}
 				}
 
 				function invertColor(hex) {
