@@ -1,0 +1,105 @@
+<!-- 	
+	Teo Espero
+	BS Cloud and Systems Administration
+	Western Governors University
+
+	#Web-Dev-Bootcamp-Udemy
+-->
+
+<! DOCTYPE html>
+<html lang="en">
+<html>
+	<head>	
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link href="normalize.css" rel="stylesheet" type="text/css">
+			<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+			<link href="bootstrap.css" rel="stylesheet" type="text/css">
+			<link href="galery.css" rel="stylesheet" type="text/css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+			<script type="text/javascript" src="bootstrap.js"></script>
+			<meta charset="utf-8">
+			<meta charset="utf-8">
+			<title>teoespero.com | Javascript Programming - Document Object Model (DOM)</title>
+			<meta name="description" content="">
+  			<meta name="author" content="teoespero">
+  
+	</head>
+	<body>
+		<div class="container">
+			<h1>Shoe logos</h1>
+			<div class="thumbnail">
+				<img src="https://i.pinimg.com/originals/c9/cf/40/c9cf405e6d1127660169f6319995fb34.jpg" id="slide">
+			</div>
+			<div class="container">
+				<button onclick="previous()">Previous</button>
+				<button onclick="next()">Next</button>
+				<button onclick="startShow()">Begin Slide show</button>
+				<button onclick="stopShow()">Stop Slide show</button>
+			</div>
+		</div>
+			<script type="text/javascript">
+				var myImages = [
+					"https://i.pinimg.com/originals/c9/cf/40/c9cf405e6d1127660169f6319995fb34.jpg",
+					"https://www.sportbuzzbusiness.fr/wp-content/uploads/2014/02/logo-PUMA.jpg",
+					"https://i.pinimg.com/originals/53/57/13/53571317d1619c765293536c9e47c7ca.jpg",
+					"https://brandingmonitor.pl/wp-content/uploads/2017/07/converse-new-logo-rebranding.png",
+					"https://i.pinimg.com/originals/89/fb/28/89fb28418966008fd4f5a1fc9208035a.jpg",
+					"https://eu1.hatstoremedia.com/hatstore/images/image-vans-kepsar-2017-02-21-115127113/555/555/0/vans-kepsar.png"
+				]
+
+				var pointer = 0;
+				var slideInterval = 0;
+
+
+				function previous(){
+					clearInterval(slideInterval);
+					slideInterval = 0; // I just do this so I know I've cleared the interval
+
+					if (pointer < 1){
+						pointer = 0;
+						document.getElementById("slide").src = myImages[pointer];
+					}
+					else {
+						pointer = pointer - 1;
+						document.getElementById("slide").src = myImages[pointer];
+					}
+				}
+
+				function next(){
+					clearInterval(slideInterval);
+					slideInterval = 0; // I just do this so I know I've cleared the interval
+
+					if (pointer == (myImages.length - 1)){
+						pointer = (myImages.length -1);
+						document.getElementById("slide").src = myImages[pointer];
+					}
+					else {
+						pointer = pointer + 1;
+						document.getElementById("slide").src = myImages[pointer];
+					}
+				}
+
+				function startShow(){
+					slideInterval = setInterval(slideshow,2000);;
+				}
+
+				function slideshow(){
+					if (pointer > myImages.length){
+						pointer = 0;
+					}
+					else {
+						pointer = pointer + 1;
+					}
+					document.getElementById("slide").src = myImages[pointer];
+				}
+
+				function stopShow(){
+					clearInterval(slideInterval);
+					slideInterval = 0; // I just do this so I know I've cleared the interval
+
+				}
+
+			</script>
+	</body>
+</html>
