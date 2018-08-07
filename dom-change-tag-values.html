@@ -1,0 +1,47 @@
+<!-- 	
+	Teo Espero
+	BS Cloud and Systems Administration
+	Western Governors University
+
+	#Web-Dev-Bootcamp-Udemy
+-->
+
+<! DOCTYPE html>
+<html lang="en">
+<html>
+	<head>	
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link href="normalize.css" rel="stylesheet" type="text/css">
+			<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+			<link href="bootstrap.css" rel="stylesheet" type="text/css">
+			<link href="galery.css" rel="stylesheet" type="text/css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+			<script type="text/javascript" src="bootstrap.js"></script>
+			<meta charset="utf-8">
+			<title>teoespero.com | Javascript Programming - DOM Styles</title>
+			<meta name="description" content="">
+  			<meta name="author" content="teoespero">
+  			<link href="some-class.css" rel="stylesheet" type="text/css">
+  
+	</head>
+	<body>
+		<div class="container">
+			<h1>Here Kitty kitty kitty....</h1>
+			<div class="thumbnail">
+				<img id="catPic" src="https://images.unsplash.com/photo-1517429481096-5bc77134f77c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6bf8664a40a24b1d4ef439b380d7696e&auto=format&fit=crop&w=500&q=60" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">
+			</div>
+			<script type="text/javascript">
+
+
+				function mouseOver(catPic) {
+				    catPic.src = "https://images.unsplash.com/photo-1488015795646-7e22a773d72a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=85f3d3ca03eab737cc448726428d19d0&auto=format&fit=crop&w=500&q=60";
+				}
+
+				function mouseOut(catPic) {
+				    catPic.src = "https://images.unsplash.com/photo-1517429481096-5bc77134f77c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6bf8664a40a24b1d4ef439b380d7696e&auto=format&fit=crop&w=500&q=60";
+				}
+			</script>
+		</div>
+	</body>
+</html>
