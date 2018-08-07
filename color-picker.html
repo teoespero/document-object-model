@@ -1,0 +1,80 @@
+<!-- 	
+	Teo Espero
+	BS Cloud and Systems Administration
+	Western Governors University
+
+	#Web-Dev-Bootcamp-Udemy
+-->
+
+<! DOCTYPE html>
+<html lang="en">
+<html>
+	<head>	
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link href="normalize.css" rel="stylesheet" type="text/css">
+			<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+			<link href="bootstrap.css" rel="stylesheet" type="text/css">
+			<link href="galery.css" rel="stylesheet" type="text/css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+			<script type="text/javascript" src="bootstrap.js"></script>
+			<meta charset="utf-8">
+			<meta charset="utf-8">
+			<title>teoespero.com | Javascript Programming - Document Object Model (DOM)</title>
+			<meta name="description" content="">
+  			<meta name="author" content="teoespero">
+  
+	</head>
+	<body>
+		<div class="container">
+			<h1 id="header">Color Picker</h1>
+			<input type="color" id="myColor"> <button onclick="whatColor()">Apply</button>
+			<br>
+			<br>
+			<label id="myLabel">Background color&nbsp;</label><label id="colorCode">#000000</label>
+			<br>
+			<label id="myLabel2">Text color</label>&nbsp;<label id="colorCodeText">#000000</label>
+			<p id="myText">
+				Lorem ipsum dolor amet food truck enamel pin whatever williamsburg retro gluten-free. Austin flexitarian waistcoat, lyft wayfarers hammock mlkshk cray next level meggings drinking vinegar vice. Vice squid food truck, poke schlitz pop-up dreamcatcher narwhal marfa quinoa. Distillery celiac kickstarter tofu glossier. Brunch live-edge ethical, humblebrag forage vexillologist semiotics swag fashion axe chartreuse. Mustache keytar listicle YOLO yr.
+			</p>
+			<script type="text/javascript">
+				function whatColor(){
+					document.body.style.backgroundColor = myColor.value;	
+					document.getElementById("colorCode").textContent = myColor.value;
+					document.getElementById("colorCodeText").textContent = myColor.value;
+					document.getElementById("colorCodeText").style.color = invertColor(myColor.value);
+					document.getElementById("colorCode").style.color = invertColor(myColor.value);
+					document.getElementById("header").style.color = invertColor(myColor.value);
+					document.getElementById("myLabel").style.color = invertColor(myColor.value);
+					document.getElementById("myLabel2").style.color = invertColor(myColor.value);
+					document.getElementById("myText").style.color = invertColor(myColor.value);
+				}
+
+				function invertColor(hex) {
+				    if (hex.indexOf('#') === 0) {
+				        hex = hex.slice(1);
+				    }
+				    // convert 3-digit hex to 6-digits.
+				    if (hex.length === 3) {
+				        hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+				    }
+				    if (hex.length !== 6) {
+				        throw new Error('Invalid HEX color.');
+				    }
+				    // invert color components
+				    var r = (255 - parseInt(hex.slice(0, 2), 16)).toString(16),
+				        g = (255 - parseInt(hex.slice(2, 4), 16)).toString(16),
+				        b = (255 - parseInt(hex.slice(4, 6), 16)).toString(16);
+				    // pad each with zeros and return
+				    return '#' + padZero(r) + padZero(g) + padZero(b);
+				}
+
+				function padZero(str, len) {
+				    len = len || 2;
+				    var zeros = new Array(len).join('0');
+				    return (zeros + str).slice(-len);
+				}
+			</script>
+		</div>
+	</body>
+</html>
