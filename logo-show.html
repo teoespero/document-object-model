@@ -85,13 +85,14 @@
 				}
 
 				function slideshow(){
-					if (pointer > myImages.length){
-						pointer = 0;
+					if (pointer == (myImages.length - 1)){
+						pointer = (myImages.length -1);
+						document.getElementById("slide").src = myImages[pointer];
 					}
 					else {
 						pointer = pointer + 1;
+						document.getElementById("slide").src = myImages[pointer];
 					}
-					document.getElementById("slide").src = myImages[pointer];
 				}
 
 				function stopShow(){
